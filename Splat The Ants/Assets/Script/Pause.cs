@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Facebook.Unity;
 public class Pause : MonoBehaviour {
 
 	private bool isPause = false;
@@ -14,6 +14,16 @@ public class Pause : MonoBehaviour {
 		if(isPause){
 			Time.timeScale = 1;
 			isPause = false;
+			isPause = false;
+			if (FB.IsInitialized) {
+      			FB.ActivateApp();
+    		} 
+    		else {
+      		//Handle FB.Init
+      		FB.Init( () => {
+        	FB.ActivateApp();
+      		});
+    		}
 		}
 		else{
 			Time.timeScale = 0;

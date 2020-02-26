@@ -32,6 +32,7 @@ public class CommonAntBossFight : MonoBehaviour {
 		}
 	}
 	private void OnMouseDown(){
+		AntKillCounter.getInstance().setKillCounter();
 		ScreenManager.getInstance().setScoreNumber();
 		Destroy(this.gameObject);
 	}

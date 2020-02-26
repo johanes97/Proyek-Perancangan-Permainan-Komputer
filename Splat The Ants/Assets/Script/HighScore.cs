@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Facebook.Unity;
 public class HighScore : MonoBehaviour {
 
 	public static int highscoreNumber = 0;
@@ -10,6 +10,7 @@ public class HighScore : MonoBehaviour {
 	void Start () {
 		highscoreInstance = this;		
 		highscoreNumber = 0;
+		LogLevelEvent();
 	}
 	public static HighScore getInstance(){
 		return highscoreInstance;
@@ -20,5 +21,11 @@ public class HighScore : MonoBehaviour {
 	}
 	public int getHighScoreNumber(){
 		return PlayerPrefs.GetInt("HighScore",highscoreNumber);
+	}
+	public void LogLevelEvent() {
+    	FB.LogAppEvent(
+        	getHighScoreNumber()+""
+    	);
+    	Debug.Log("masuk log even highscore");
 	}
 }

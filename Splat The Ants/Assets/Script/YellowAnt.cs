@@ -41,6 +41,7 @@ public class YellowAnt : MonoBehaviour {
 			Destroy(this.gameObject);	
 		}
 		else if(live == 0){
+			AntKillCounter.getInstance().setKillCounter();
 			ScreenManager.getInstance().setScoreNumber();
 			ScreenManager.getInstance().setCounterAnt();
 			Destroy(this.gameObject);

@@ -29,6 +29,7 @@ public class BossAnt : MonoBehaviour {
 			Destroy(this.gameObject);	
 		}
 		else if(BossManager.getInstance().getBossLive()==0){
+			AntKillCounter.getInstance().setKillCounter();
 			BossScreenManager.getInstance().setBossScoreNumber();
 			BossScreenManager.getInstance().setLevel();
 			BossScreenManager.getInstance().addCounterAnt();

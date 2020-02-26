@@ -8,7 +8,7 @@ public class BossManager : MonoBehaviour {
 
 	void Awake(){
 		bmInstance=this;
-		bossLives = 15;
+		bossLives = 30;
 	}
 
 	public static BossManager getInstance(){

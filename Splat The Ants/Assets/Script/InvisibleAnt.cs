@@ -41,6 +41,7 @@ public class InvisibleAnt : MonoBehaviour {
 	}
 	private void OnMouseDown(){
 		if(!Pause.getInstance().getConditionPause()){
+			AntKillCounter.getInstance().setKillCounter();
 			ScreenManager.getInstance().setScoreNumber();
 			ScreenManager.getInstance().setCounterAnt();
 			Destroy(this.gameObject);

@@ -44,6 +44,7 @@ public class RedAnt : MonoBehaviour {
 			rb.velocity = new Vector2(0,Random.Range(1,4)*-2f);
 		}
 		else if(live == 0){
+			AntKillCounter.getInstance().setKillCounter();
 			ScreenManager.getInstance().setScoreNumber();
 			ScreenManager.getInstance().setCounterAnt();
 			Destroy(this.gameObject);

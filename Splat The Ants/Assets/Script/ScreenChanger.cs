@@ -15,6 +15,10 @@ public class ScreenChanger : MonoBehaviour {
 		return scInstance;
 	}
 
+	public void loadTutorial(){
+    	SceneManager.LoadScene("Tutorial");
+	}
+
 	public void loadGame(){
     	SceneManager.LoadScene("MainGame");
 	}

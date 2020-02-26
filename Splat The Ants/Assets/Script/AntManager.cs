@@ -19,6 +19,7 @@ public class AntManager : MonoBehaviour {
 		ant = Instantiate(antPrefab) as GameObject;
 		ant.transform.position = new Vector2(Random.Range(-screenBounds.x*0.8f,screenBounds.x*0.8f),screenBounds.y);
 		Debug.Log(ScreenManager.getInstance().getCounterAnt()+"");
+		Debug.Log("ini level: "+Level.getInstance().getLevel()+"");
 	}
 	IEnumerator antsWave(){
 		while(true){
