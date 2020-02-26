@@ -11,7 +11,7 @@ public class AntKillCounter : MonoBehaviour {
 		antKillInstance = this;
 		killCounter = getKillCounter();
 		PlayerPrefs.SetInt("AntKillCounter",killCounter);
-		LogLevelEvent();
+		LogAntKillEvent();
 		Debug.Log("ini udh bunuh brp semut: "+getKillCounter()+"");
 	}
 	public static AntKillCounter getInstance(){
@@ -25,10 +25,8 @@ public class AntKillCounter : MonoBehaviour {
 		return PlayerPrefs.GetInt("AntKillCounter",killCounter);
 	}
 
-	public void LogLevelEvent() {
-    	FB.LogAppEvent(
-        	getKillCounter()+""
-    	);
+	public void LogAntKillEvent() {
+    	FB.LogAppEvent("Total Ant Kill",getKillCounter());
     	Debug.Log("masuk log even itung bunuh semut");
 	}
 }

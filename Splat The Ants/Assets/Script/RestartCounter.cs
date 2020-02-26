@@ -11,7 +11,7 @@ public class RestartCounter : MonoBehaviour {
 		restartInstance = this;
 		counterRestart = getRestartCounter();
 		PlayerPrefs.SetInt("CounterRestart",counterRestart);
-		LogLevelEvent();
+		LogRestartCounterEvent();
 		Debug.Log("ini udh restart brp kali: "+getRestartCounter()+"");
 	}
 	public static RestartCounter getInstance(){
@@ -25,10 +25,8 @@ public class RestartCounter : MonoBehaviour {
 		return PlayerPrefs.GetInt("CounterRestart",counterRestart);
 	}
 
-	public void LogLevelEvent() {
-    	FB.LogAppEvent(
-        	getRestartCounter()+""
-    	);
+	public void LogRestartCounterEvent() {
+    	FB.LogAppEvent("Total Restart",getRestartCounter());
     	Debug.Log("masuk log even restart counter");
 	}
 }

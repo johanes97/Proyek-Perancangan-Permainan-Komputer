@@ -34,9 +34,7 @@ public class Level : MonoBehaviour {
 		return PlayerPrefs.GetInt("HighestLevel",highestLevel);
 	}
 	public void LogLevelEvent() {
-    	FB.LogAppEvent(
-        	getHighestLevel()+""
-    	);
+    	FB.LogAppEvent("Highest Level",getHighestLevel());
     	Debug.Log("masuk log even level");
 	}
 }

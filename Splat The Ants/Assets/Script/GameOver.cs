@@ -21,7 +21,7 @@ public class GameOver : MonoBehaviour {
 		PlayerPrefs.SetInt("CounterAnt",10);
 		PlayerPrefs.SetFloat("health",-0.1386449f);
 		PlayerPrefs.SetInt("Score",0);
-		LogLevelEvent();
+		LogGameOverEvent();
 		Debug.Log("ini gameover: "+getCounterGameOver()+"");
 	}
 
@@ -38,10 +38,8 @@ public class GameOver : MonoBehaviour {
 		return PlayerPrefs.GetInt("GameOverCounter",gameOverCounter);
 	}
 
-	public void LogLevelEvent() {
-    	FB.LogAppEvent(
-        	getCounterGameOver()+""
-    	);
+	public void LogGameOverEvent() {
+    	FB.LogAppEvent("Total GameOver",getCounterGameOver());
     	Debug.Log("masuk log even gameover");
 	}
 }

@@ -12,7 +12,7 @@ public class BossBattleCounter : MonoBehaviour {
 		bossBattleCounter = getCounterBoss();
 		setCounterBoss();
 		PlayerPrefs.SetInt("BossBattleCounter",bossBattleCounter);
-		LogLevelEvent();
+		LogBossCounterEvent();
 		Debug.Log("ini boss battle counter: "+getCounterBoss()+"");
 	}
 	public static BossBattleCounter getInstance(){
@@ -26,10 +26,8 @@ public class BossBattleCounter : MonoBehaviour {
 		return PlayerPrefs.GetInt("BossBattleCounter",bossBattleCounter);
 	}
 
-	public void LogLevelEvent() {
-    	FB.LogAppEvent(
-        	getCounterBoss()+""
-    	);
+	public void LogBossCounterEvent() {
+    	FB.LogAppEvent("Total Boss Encounter",getCounterBoss());
     	Debug.Log("masuk log even boss counter");
 	}
 }
